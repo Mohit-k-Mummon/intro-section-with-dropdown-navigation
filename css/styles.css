@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+/****************** 
+    CSS VARIABLES
+******************/
+:root {
+    /* Colors */
+        /* Neutral */
+        --Almost-White: hsl(0, 0%, 98%);
+        --Medium-Gray: hsl(0, 0%, 41%);
+        --Almost-Black: hsl(0, 0%, 8%);
+}
+
+
+
+/****************** 
+      RESET
+******************/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    width: 100%;
+}
+
+
+
+
+/****************** 
+        MAIN
+******************/
+body {
+    min-height: 100vh;
+    font-family: 'Epilogue', sans-serif;
+}
