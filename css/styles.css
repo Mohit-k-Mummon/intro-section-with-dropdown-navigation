@@ -53,7 +53,6 @@ body {
     width: 100vw;
     font-family: 'Epilogue', sans-serif;
     position: relative;
-    overflow: hidden;
     background-color: var(--Almost-White);
 }
 
@@ -145,6 +144,21 @@ SLIDE OUT MOBILE MENU
     margin-top: 4.2rem;
 }
 
+
+/* clickable feature dropdown */
+.features-mb-wrapper,
+.company-mb-wrapper {
+    display: flex;
+    cursor: pointer;
+}
+
+.chevron-mb {
+    margin-left: 1.2rem;
+    transform: scale(1) translateY(0.1rem) rotate(0);
+    width: 1rem;
+    transition: transform 0.3s;
+}
+
 .features-mb,
 .company-mb,
 .careers-mb,
@@ -156,21 +170,6 @@ SLIDE OUT MOBILE MENU
     position: relative;
 }
 
-.features-mb::after {
-    bottom: 2px;
-    content: var(--contentafter, url(../images/icon-arrow-down.svg));
-    padding-left: 1rem;
-    position: relative;
-    transition: all 0.5s;
-}
-
-.company-mb::after {
-    bottom: 2px;
-    content: var(--contentafter, url(../images/icon-arrow-down.svg));
-    padding-left: 1rem;
-    position: relative;
-    transition: all 0.5s;
-}
 
 
 
@@ -298,21 +297,26 @@ SLIDE OUT MOBILE MENU
 }
 
 
-.container .features::after {
-    bottom: 2px;
-    content: var(--contentafter, url(../images/icon-arrow-down.svg));
-    padding-left: 0.8rem;
-    position: relative;
-    transition: all 0.5s;
+/* clickable feature dropdown */
+.features-wrapper,
+.company-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 7.8rem;
+    cursor: pointer;
 }
 
-.container .company::after {
-    bottom: 2px;
-    content: var(--contentafter, url(../images/icon-arrow-down.svg));
-    padding-left: 0.8rem;
-    position: relative;
-    transition: all 0.5s;
+.features-wrapper:hover > *,
+.company-wrapper:hover > * {
+    color: var(--Almost-Black);
+} 
+
+.chevron {
+    transform: scale(0.35) translateY(-12px) rotate(0);
+    transition: transform 0.3s;
 }
+
+
 
 .features,
 .company,
@@ -573,7 +577,7 @@ SLIDE OUT MOBILE MENU
         width: 100%;
         max-width: 123.1rem;
         padding: 0 3.8rem;
-        margin: 0 auto;
+        margin: 0 auto 11rem;
     }
 
     .hero__container {
@@ -633,6 +637,7 @@ SLIDE OUT MOBILE MENU
         gap: 3.6rem;
         position: relative;
         top: 3px;
+        padding-bottom: 0;
     }
     
     #databiz {

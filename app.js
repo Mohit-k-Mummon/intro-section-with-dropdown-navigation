@@ -10,8 +10,10 @@ let menuActive = false;
 // Mobile Menu Collapsibles
 const mobileFeatureCollapsible = document.querySelector('.features-collapsible');
 const mobileCompanyCollapsible = document.querySelector('.company-collapsible');
-const featuresMB = document.querySelector('.features-mb');
-const companyMB = document.querySelector('.company-mb');
+const featuresMB = document.querySelector('.features-mb-wrapper');
+const companyMB = document.querySelector('.company-mb-wrapper');
+const featuresChevronMB = document.getElementById('features-mb-chevron');
+const companyChevronMB = document.getElementById('company-mb-chevron');
 
 // Item State
 let featureState = false;
@@ -43,12 +45,14 @@ menuCloseBtn.addEventListener('click', () => {
 featuresMB.addEventListener('click', () => {
 	if (featureState === false) {
 		mobileFeatureCollapsible.style.display = 'flex';
-		featuresMB.style.setProperty('--contentafter', 'url(../images/icon-arrow-up.svg');
-		// ^^ changes the chevron image for ::after
+		featuresChevronMB.style.setProperty(
+			'transform',
+			'scale(1) translateY(0.1rem) rotate(-180deg)'
+		);
 		featureState = true;
 	} else {
 		mobileFeatureCollapsible.style.display = 'none';
-		featuresMB.style.setProperty('--contentafter', 'url(../images/icon-arrow-down.svg');
+		featuresChevronMB.style.setProperty('transform', 'scale(1) translateY(0.1rem) rotate(0)');
 		featureState = false;
 	}
 });
@@ -56,21 +60,26 @@ featuresMB.addEventListener('click', () => {
 companyMB.addEventListener('click', () => {
 	if (companyState === false) {
 		mobileCompanyCollapsible.style.display = 'flex';
-		companyMB.style.setProperty('--contentafter', 'url(../images/icon-arrow-up.svg');
+		companyChevronMB.style.setProperty(
+			'transform',
+			'scale(1) translateY(0.1rem) rotate(-180deg)'
+		);
 		companyState = true;
 	} else {
 		mobileCompanyCollapsible.style.display = 'none';
-		companyMB.style.setProperty('--contentafter', 'url(../images/icon-arrow-down.svg');
+		companyChevronMB.style.setProperty('transform', 'scale(1) translateY(0.1rem) rotate(0)');
 		companyState = false;
 	}
 });
 
 // Desktop DropDown Containers
 const featuresDropdown = document.querySelector('.features-dropdown-container');
-const features = document.querySelector('.features');
+const features = document.querySelector('.features-wrapper');
+const featuresChevron = document.getElementById('features-chevron');
 
 const companyDropdown = document.querySelector('.company-dropdown-container');
-const company = document.querySelector('.company');
+const company = document.querySelector('.company-wrapper');
+const companyChevron = document.getElementById('company-chevron');
 
 // Desktop States
 let desktopFeatureState = false;
@@ -79,11 +88,14 @@ let desktopCompanyState = false;
 features.addEventListener('click', () => {
 	if (desktopFeatureState === false) {
 		featuresDropdown.style.display = 'flex';
-		features.style.setProperty('--contentafter', 'url(../images/icon-arrow-up.svg');
+		featuresChevron.style.setProperty(
+			'transform',
+			'scale(0.35) translateY(-12px) rotate(-180deg)'
+		);
 		desktopFeatureState = true;
 	} else {
 		featuresDropdown.style.display = 'none';
-		features.style.setProperty('--contentafter', 'url(../images/icon-arrow-down.svg');
+		featuresChevron.style.setProperty('transform', 'scale(0.35) translateY(-12px) rotate(0)');
 		desktopFeatureState = false;
 	}
 });
@@ -91,16 +103,19 @@ features.addEventListener('click', () => {
 company.addEventListener('click', () => {
 	if (desktopCompanyState === false) {
 		companyDropdown.style.display = 'flex';
-		company.style.setProperty('--contentafter', 'url(../images/icon-arrow-up.svg');
+		companyChevron.style.setProperty(
+			'transform',
+			'scale(0.35) translateY(-12px) rotate(-180deg)'
+		);
 		desktopCompanyState = true;
 	} else {
 		companyDropdown.style.display = 'none';
-		company.style.setProperty('--contentafter', 'url(../images/icon-arrow-down.svg');
+		companyChevron.style.setProperty('transform', 'scale(0.35) translateY(-12px) rotate(0)');
 		desktopCompanyState = false;
 	}
 });
 
-// Media query
+// Media query for heading
 let heading = document.getElementById('hero-heading');
 if (window.matchMedia('(min-width: 1024px)').matches) {
 	heading.innerHTML = 'Make <br> remote work';
