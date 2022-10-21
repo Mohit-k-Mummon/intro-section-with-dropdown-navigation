@@ -29,7 +29,8 @@ html {
 }
 
 img {
-    width: 100%;
+    height: 100%;
+    width: auto;
 }
 
 a {
@@ -52,7 +53,7 @@ body {
     width: 100vw;
     font-family: 'Epilogue', sans-serif;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: var(--Almost-White);
 }
 
@@ -61,8 +62,10 @@ body {
     width: 100vw;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.67);
+    display: none;
     opacity: 0;
     transition: opacity 0.5s ease;
+    z-index: -10;
 }
 
 
@@ -109,6 +112,8 @@ SLIDE OUT MOBILE MENU
     top: 0;
     transition: all 0.3s;
     width: 24rem;
+    z-index: 100;
+    display: none;
 }
 
 .mobile-menu p:hover {
@@ -268,7 +273,7 @@ SLIDE OUT MOBILE MENU
     align-items: center;
     display: none;
     justify-content: space-between;
-    padding: 3rem 4rem;
+    padding: 3rem 4rem 6.8rem 4rem;
     max-width: 144rem;
     margin: 0 auto;
 }
@@ -442,5 +447,215 @@ SLIDE OUT MOBILE MENU
 
     .nav-desktop {
         display: flex;
+    }
+}
+
+
+
+/**************
+     GRID 
+***************/
+.grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-rows: auto;
+}
+
+@media screen and (min-width: 1024px) {
+    .grid {
+        height: 100%;
+        grid-template-columns: auto 45%;
+        grid-template-rows: auto;
+        gap: 6vw;
+    }
+}
+
+
+
+
+/****************** 
+    HERO
+******************/
+.hero {
+    height: min-content;
+    max-height: 65.8rem;
+    width: 100%;
+    max-width: 123.1rem;
+    margin: 0 auto;
+}
+
+.hero__container {
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.hero__img-container {
+    grid-row: 1;
+}
+
+.hero__img-container .hero__img {
+    width: 100%;
+}
+
+
+ /* Article Container */
+.hero__article-container {
+    text-align: center;
+}
+
+.hero__heading {
+    font-size: clamp(3rem, 5vw + 1.5rem, 7.8rem);
+    margin-top: 6rem;
+}
+
+.hero__tagline {
+    font-size: 1.6rem;
+    color: var(--Medium-Gray);
+    padding: 0 1rem;
+    line-height: 1.5;
+    margin-top: 2rem;
+}
+
+.article-container .button {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    padding: 1.5rem 2.2rem;
+    background-color: var(--Almost-Black);
+    color: #fff;
+    border-radius: 15px;
+    transition: 0.2s;
+}
+
+.article-container .button:hover {
+    background-color: var(--Almost-White);
+    color: var(--Almost-Black);
+    outline: 2px solid var(--Almost-Black);
+}
+
+.client-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 5rem;
+    padding-bottom: 4rem;
+}
+
+#databiz {
+    width: 100%;
+    max-width: 8.2rem;
+    height: auto;
+}
+
+#audio {
+    width: 100%;
+    max-width: 5.3rem;
+}
+
+#meet {
+    width: 100%;
+    max-width: 6.5rem;
+}
+
+#maker {
+    width: 100%;
+    max-width: 5.9rem;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .hero {
+        height: min-content;
+        max-height: 65.8rem;
+        width: 100%;
+        max-width: 123.1rem;
+        padding: 0 3.8rem;
+        margin: 0 auto;
+    }
+
+    .hero__container {
+        max-width: none;
+    }
+    
+    /* Img Container */
+    .hero__img-container {
+        grid-column: 2;
+    }
+    .hero__img-container .hero__img {
+        width: 100%;
+        height: auto;
+        padding: 0 0 1rem 4.7rem;
+    }
+    
+    /* Article Container */
+    .hero__article-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    .hero__heading {
+        margin: 10.4rem 0 0 0;
+    }
+    
+    .hero__tagline {
+        font-size: 1.8rem;
+        color: var(--Medium-Gray);
+        line-height: 1.5;
+        margin-top: 4rem;
+    }
+    
+    .article-container .button {
+        display: inline-block;
+        margin-top: 6rem;
+        font-size: 1.8rem;
+        padding: 1.8rem 3.1rem;
+        background-color: var(--Almost-Black);
+        color: #fff;
+        border-radius: 20px;
+        transition: 0.2s;
+    }
+    
+    
+    
+    .client-container {
+        height: 5rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 3.6rem;
+        position: relative;
+        top: 3px;
+    }
+    
+    #databiz {
+        width: 100%;
+        max-width: 11.3rem;
+        height: auto;
+    }
+    
+    #audio {
+        width: 100%;
+        height: auto;
+        max-width: 7.3rem;
+    }
+    
+    #meet {
+        width: 100%;
+        height: auto;
+        max-width: 9rem;
+    }
+    
+    #maker {
+        width: 100%;
+        height: auto;
+        max-width: 8.2rem;
     }
 }

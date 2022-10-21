@@ -20,16 +20,21 @@ let companyState = false;
 // Mobile Menu Function
 menuIcon.addEventListener('click', () => {
 	if (menuActive === false) {
+		mobileMenu.style.display = 'block';
 		mobileMenu.style.right = '0rem';
 		overlay.style.opacity = '1';
+		overlay.style.display = 'block';
+		overlay.style.zIndex = '0';
 		menuActive = true;
 	}
 });
 
 menuCloseBtn.addEventListener('click', () => {
 	if (menuActive === true) {
+		mobileMenu.style.display = 'none';
 		mobileMenu.style.right = '-24rem';
 		overlay.style.opacity = '0';
+		overlay.style.display = 'none';
 		menuActive = false;
 	}
 });
@@ -94,3 +99,11 @@ company.addEventListener('click', () => {
 		desktopCompanyState = false;
 	}
 });
+
+// Media query
+let heading = document.getElementById('hero-heading');
+if (window.matchMedia('(min-width: 1024px)').matches) {
+	heading.innerHTML = 'Make <br> remote work';
+} else {
+	heading.innerHTML = 'Make remote work';
+}
