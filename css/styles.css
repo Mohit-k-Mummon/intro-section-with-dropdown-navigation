@@ -529,6 +529,7 @@ SLIDE OUT MOBILE MENU
     background-color: var(--Almost-Black);
     color: #fff;
     border-radius: 15px;
+    border-collapse: separate;
     outline: none;
     transition: 0.2s;
 }
