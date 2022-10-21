@@ -1,0 +1,22 @@
+{
+  "name": "intro-section-with-dropdown-navigation-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Intro section with dropdown navigation coding challenge](./design/desktop-preview.jpg)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohit-k-Mummon/intro-section-with-dropdown-navigation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mohit-k-Mummon/intro-section-with-dropdown-navigation/issues"
+  },
+  "homepage": "https://github.com/Mohit-k-Mummon/intro-section-with-dropdown-navigation#readme",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}
