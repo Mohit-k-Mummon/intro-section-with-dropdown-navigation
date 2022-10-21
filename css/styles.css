@@ -529,15 +529,13 @@ SLIDE OUT MOBILE MENU
     background-color: var(--Almost-Black);
     color: #fff;
     border-radius: 15px;
-    overflow: hidden;
-    outline: none;
     transition: 0.2s;
+    border: 1px solid;
 }
 
 .article-container .button:hover {
     background-color: var(--Almost-White);
     color: var(--Almost-Black);
-    outline: 1px solid var(--Almost-Black);
 }
 
 .client-container {
